@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Action } from "@ngrx/store";
 import { Category } from "../../model";
+import { NewAction } from "../new-action";
 
 @Injectable()
 export class CategoryActions {
@@ -14,7 +15,7 @@ export class CategoryActions {
         };
     }
 
-    loadCategoriesSuccess(categories: Category[]): Action {
+    loadCategoriesSuccess(categories: Category[]): NewAction<Category[]> {
         return {
             type: CategoryActions.LOAD_CATEGORIES_SUCCESS,
             payload: categories
